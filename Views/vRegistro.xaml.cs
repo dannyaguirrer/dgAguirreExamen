@@ -94,11 +94,7 @@ public partial class vRegistro : ContentPage
         }
         double total = monto + cuota * 5;
 
-        string casillero = "No";
-        if (swCasillero.IsToggled)
-        {
-            casillero = "Sí";
-        }
+        string casillero = lblCasillero.Text;
 
         string nombre = txtNombre.Text;
         string apellido = txtApellido.Text;
@@ -117,5 +113,18 @@ public partial class vRegistro : ContentPage
 
         await Navigation.PushAsync(new vResumen(usuario, nombre, apellido, edad,
             fecha.ToString("dd/MM/yyyy"), plan, casillero, monto, cuota, total));
+    }
+    private void swCasillero_Toggled(object sender, ToggledEventArgs e)
+    {
+        if (e.Value)
+        {
+            lblCasillero.Text = "Sí";
+        }
+        else
+        {
+            lblCasillero.Text = "No";
+        }
+
+        txtPago.Text = "";
     }
 }

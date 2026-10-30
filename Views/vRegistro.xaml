@@ -10,7 +10,7 @@
 
             <Label x:Name="lblUsuario" />
 
-            <Label Text="REGISTRO"  FontSize="22" HorizontalOptions="Center" />
+            <Label Text="REGISTRO" TextColor="Blue" FontSize="22" HorizontalOptions="Center" />
 
             <Grid ColumnSpacing="10">
                 <Grid.RowDefinitions>
@@ -52,7 +52,13 @@
                 <Picker x:Name="pkPlan" Title="Seleccione un plan" Grid.Row="1" Grid.Column="1" />
 
                 <Label Text="Casillero" Grid.Row="2" Grid.Column="0" />
-                <Switch x:Name="swCasillero" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" />
+                <HorizontalStackLayout Grid.Row="2" Grid.Column="1" Spacing="10">
+                    <Switch x:Name="swCasillero"
+                            OnColor="Purple"
+                            ThumbColor="White"
+                            Toggled="swCasillero_Toggled" />
+                    <Label x:Name="lblCasillero" Text="No" />
+                </HorizontalStackLayout>
 
                 <Label Text="Monto Inicial" Grid.Row="3" Grid.Column="0" />
                 <Entry x:Name="txtMonto" Placeholder="Entre 120 y 600" Keyboard="Numeric" Grid.Row="3" Grid.Column="1" />
@@ -65,4 +71,5 @@
 
         </VerticalStackLayout>
     </ScrollView>
+
 </ContentPage>

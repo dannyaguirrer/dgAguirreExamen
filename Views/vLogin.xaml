@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dgAguirreExamen.Views.vLogin"
+             Title="Login">
+    <VerticalStackLayout Spacing="10" Padding="20">
+
+        <Image Source="gym.jpg" HeightRequest="120" />
+
+        <Label Text="GIMNASIO - INICIO DE SESIÓN"  FontSize="26"
+               FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+
+        <Grid RowSpacing="10" ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Usuario:" Grid.Row="0" Grid.Column="0" />
+            <Entry x:Name="txtUsuario" Placeholder="Ingrese usuario" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Contraseña:" Grid.Row="1" Grid.Column="0" />
+            <Entry x:Name="txtContrasena" Placeholder="Ingrese contraseña" IsPassword="True" Grid.Row="1" Grid.Column="1" />
+
+            <Button Text="Iniciar sesión" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Clicked="btnIniciar_Clicked" />
+        </Grid>
+
+        <Button Text="Acerca de" Clicked="btnAcercaDe_Clicked" />
+
+    </VerticalStackLayout>
+</ContentPage>
